@@ -1,0 +1,33 @@
+:root {
+  --accent: #911199;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  appearance: none;
+  font-size: inherit;
+  user-select: none;
+  box-sizing: border-box;
+  transition: background-color 0.25s, border-color 0.25s, color 0.25s, outline 0.125s;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: clamp(0.75rem, 0.75rem + 0.5vw, 1rem);
+}
+body {
+  min-height: 100svh;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}

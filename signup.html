@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Low-budget Learning Management System">
+    <link rel="stylesheet" href="default.css">
+    <link rel="stylesheet" href="layouts.css">
+    <title>Lobu LMS | Sign Up</title>
+</head>
+<body>
+    <main id="main-content">
+        <a href="index.html" class="logo">Lobu<span>LMS</span></a>
+        <form id="signupForm">
+            <h1>Sign Up</h1>
+            <div id="error-message"></div>
+            <div class="swap-button">
+                <label><input type="radio" name="role" value="student" checked>Student</label>
+                <label><input type="radio" name="role" value="teacher">Teacher</label>
+            </div>
+            <input type="email" name="email" placeholder="Your email">
+            <input type="password" name="pswrd" placeholder="Password">
+            <button>Sign Up</button>
+            <p>Already have an account? <a href="login.html">Log In</a> here</p>
+        </form>
+        <div id="attrib">&copy Lobu 2025, all rights reserved</div>
+    </main>
+    <script src="endpoint.js" defer></script>
+    <script>
+        document.querySelector("#signupForm").addEventListener('submit', function(e){
+            e.preventDefault();
+            const form = e.target;
+            /* do signup */
+            fetch(endpoint.signupUrl, {
+                method: "POST",
+                mode: "cors",
+                body: JSON.stringify({
+                    email: form.email.value,
+                    pswrd: form.pswrd.value,
+                    role: form.role.value,
+                }),
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    const {status, message} = data;
+                    if(parseInt(status) !== 201){
+                        const errorMessage = form.querySelector('#error-message');
+                        errorMessage.style.display = "block";
+                        errorMessage.textContent = message;
+                        console.log(message);
+                    }
+                    else{
+                        alert(message);
+                        window.location.href = "login.html";
+                    }
+                })
+                .catch((err) => console.error(err));
+        });
+    </script>
+</body>
+</html>

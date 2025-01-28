@@ -1,0 +1,130 @@
+#main-content {
+  width: 100vw;
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+a.logo {
+  font-family: Impact, Haettenschweiler, sans-serif;
+  font-style: oblique;
+  margin: 1rem;
+  font-size: 2.5rem;
+  text-decoration: none;
+}
+a.logo span {
+  color: #333;
+}
+#attrib {
+  margin: 1rem;
+  font-size: 0.85rem;
+}
+
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#intro h1 {
+  font-size: 2rem;
+}
+
+#signupForm,
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  line-height: 1.5;
+  background: #f7f7f7;
+  padding: 1rem;
+  box-shadow: 0 0 0.125rem #aaa;
+  border-radius: 0.5rem;
+}
+#signupForm h1,
+#loginForm h1 {
+  font-size: 2rem;
+}
+
+#signupForm #error-message,
+#loginForm #error-message {
+  padding: 0.5rem;
+  font-size: 0.85rem;
+  text-align: center;
+  color: #aa0000;
+  background: color-mix(in srgb, currentColor, white 90%);
+  border: 0.0625rem solid color-mix(in srgb, currentColor, white 60%);
+  border-radius: 0.25rem;
+  display: none;
+}
+
+#signupForm input:not([type="radio"]),
+#loginForm input:not([type="radio"]) {
+  padding: 0.5rem;
+  border: 0.0625rem solid color-mix(in srgb, currentColor, white 60%);
+  background: #ffffff;
+  border-radius: 0.25rem;
+}
+#signupForm input:not([type="radio"]):hover,
+#loginForm input:not([type="radio"]):hover {
+  border-color: var(--accent);
+}
+#signupForm input:not([type="radio"]):focus,
+#loginForm input:not([type="radio"]):focus {
+  border-color: var(--accent);
+  outline: 0.125rem solid var(--accent);
+  outline-offset: 0.0625rem;
+}
+#signupForm button,
+#loginForm button {
+  padding: 0.5rem;
+  background: var(--accent);
+  border: 0.0625rem solid var(--accent);
+  color: color-mix(in srgb, var(--accent), white 95%);
+  font-weight: bold;
+  border-radius: 0.25rem;
+}
+#signupForm button:hover,
+#loginForm button {
+  background: color-mix(in srgb, var(--accent), white 10%);
+}
+#signupForm button:active,
+#loginForm button {
+  background: color-mix(in srgb, var(--accent), black 10%);
+}
+#signupForm button:focus,
+#loginForm button:focus {
+  outline: 0.125rem solid var(--accent);
+  outline-offset: 0.0625rem;
+}
+#signupForm .swap-button {
+  display: flex;
+  border: 0.0625rem solid color-mix(in srgb, currentColor, white 60%);
+  border-radius: 0.25rem;
+  background: #fff;
+  overflow: hidden;
+}
+#signupForm .swap-button label {
+  font-size: 0.85rem;
+  padding: 0.5rem;
+  flex: 1;
+  text-align: center;
+}
+#signupForm .swap-button label:has(input:checked) {
+  font-weight: bolder;
+  background: color-mix(in srgb, var(--accent), white 80%);
+}
+#signupForm .swap-button:hover {
+  border-color: var(--accent);
+}
+#signupForm .swap-button:has(input:focus) {
+  border-color: var(--accent);
+  outline: 0.125rem solid var(--accent);
+  outline-offset: 0.0625rem;
+}
+#signupForm .swap-button label:has(input:focus) {
+  text-decoration: underline;
+}
