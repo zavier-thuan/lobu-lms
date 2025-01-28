@@ -5,6 +5,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background: #ddd8;
+  backdrop-filter: blur(0.5rem);
 }
 
 a.logo {

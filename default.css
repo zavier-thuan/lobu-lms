@@ -25,6 +25,8 @@ html {
 }
 body {
   min-height: 100svh;
+  background: url(./assets/bg.webp);
+  background-size: cover;
 }
 
 a {
@@ -35,4 +37,15 @@ a {
 a:hover,
 a:focus {
   text-decoration: underline;
+}
+
+dialog {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+dialog::backdrop {
+  background: #dddddd80;
+  backdrop-filter: blur(0.5rem);
 }
