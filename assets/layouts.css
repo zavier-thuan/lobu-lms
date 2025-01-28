@@ -9,6 +9,11 @@
   backdrop-filter: blur(0.5rem);
 }
 
+#loadingScreen {
+  text-align: center;
+  animation: loading 1s linear infinite;
+}
+
 a.logo {
   font-family: Impact, Haettenschweiler, sans-serif;
   font-style: oblique;
