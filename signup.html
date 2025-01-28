@@ -25,14 +25,14 @@
         </form>
         <div id="attrib">&copy Lobu 2025, all rights reserved</div>
     </main>
-    <dialog id="main-dialog">loading...</dialog>
+    <dialog id="loadingScreen">loading...</dialog>
     <script src="endpoint.js" defer></script>
     <script>
         document.querySelector("#signupForm").addEventListener('submit', function(e){
-            const dialog = document.querySelector("#main-dialog");
+            const loadingScreen = document.querySelector("#loadingScreen");
             e.preventDefault();
             const form = e.target;
-            dialog.showModal();
+            loadingScreen.showModal();
             /* do signup */
             fetch(endpoint.signupUrl, {
                 method: "POST",
@@ -45,7 +45,7 @@
             })
                 .then((response) => response.json())
                 .then((data) => {
-                    dialog.close();
+                    loadingScreen.close();
                     const {status, message} = data;
                     if(parseInt(status) !== 201){
                         const errorMessage = form.querySelector('#error-message');
@@ -58,7 +58,6 @@
                     }
                 })
                 .catch((err) => {
-                    dialog.close();
                     console.error(err);
                 });
         });
