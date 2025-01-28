@@ -92,11 +92,11 @@ a.logo span {
   border-radius: 0.25rem;
 }
 #signupForm button:hover,
-#loginForm button {
+#loginForm button:hover {
   background: color-mix(in srgb, var(--accent), white 10%);
 }
 #signupForm button:active,
-#loginForm button {
+#loginForm button:active {
   background: color-mix(in srgb, var(--accent), black 10%);
 }
 #signupForm button:focus,
