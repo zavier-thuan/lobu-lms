@@ -2,6 +2,11 @@
   --accent: #911199;
 }
 
+::selection {
+  background: var(--accent);
+  color: white;
+}
+
 * {
   margin: 0;
   padding: 0;
